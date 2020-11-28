@@ -3,6 +3,11 @@ import ImageViewer_swift
 import SDWebImage
 
 class WithURLViewController:UIViewController {
+    var handleTap: () -> Void {
+        return {
+            print("Handle Photo Tap for Analytics")
+        }
+    }
     
     lazy var imageView:UIImageView = {
         let iv = UIImageView()
@@ -11,7 +16,7 @@ class WithURLViewController:UIViewController {
         iv.image = Data.images[0].resize(targetSize: .thumbnail)
         
         // Setup Image Viewer With URL
-        iv.setupImageViewer(url: Data.imageUrls[0])
+        iv.setupImageViewer(url: Data.imageUrls[0], onTap: self.handleTap)
         return iv
     }()
     

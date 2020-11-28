@@ -69,6 +69,11 @@ class WithURLsViewController:UIViewController {
 }
 
 extension WithURLsViewController:UICollectionViewDataSource {
+    var handleTap: () -> Void {
+        return {
+            print("Handle Photo Tap for Analytics")
+        }
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -99,7 +104,9 @@ extension WithURLsViewController:UICollectionViewDataSource {
                     print("TAPPED", i)
                 })
             ],
-            from: self)
+            from: self,
+            onTap: self.handleTap
+        )
         
         return cell
     }

@@ -4,3 +4,5 @@ Example/Demo.xcodeproj/project.xcworkspace/xcshareddata
 Example/Demo.xcodeproj/xcuserdata
 Example/Demo.xcodeproj/project.xcworkspace/xcuserdata
 Example/Demo.xcworkspace/xcuserdata
+.DS_Store
+*.xcuserstate

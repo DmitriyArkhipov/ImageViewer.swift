@@ -2,6 +2,11 @@ import UIKit
 import ImageViewer_swift
 
 class BasicViewController:UIViewController {
+    var handleTap: () -> Void {
+        return {
+            print("Handle Photo Tap for Analytics")
+        }
+    }
     
     lazy var imageView:UIImageView = {
         let iv = UIImageView()

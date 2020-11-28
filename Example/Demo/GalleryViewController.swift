@@ -64,6 +64,11 @@ class WithImagesViewController:UIViewController {
 }
 
 extension WithImagesViewController:UICollectionViewDataSource {
+    var handleTap: () -> Void {
+        return {
+            print("Handle Photo Tap for Analytics")
+        }
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -87,7 +92,9 @@ extension WithImagesViewController:UICollectionViewDataSource {
         // Setup Image Viewer with [UIImage]
         cell.imageView.setupImageViewer(
             images: images,
-            initialIndex: indexPath.item)
+            initialIndex: indexPath.item,
+            onTap: self.handleTap
+        )
         
         return cell
     }
